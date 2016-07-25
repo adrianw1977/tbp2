@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h2>Add a new course</h2>
+	{% for blog in blogs %}
+		<h5>{{blog.title}}</h5>
+		<p>{{blog.blog}}</p>
+	{% endfor %}
+	<form action="/blogs" method = "post">
+		{% csrf_token %}
+		Name:<input type="text" name = "fl_name">
+		Description:<textarea name = "newest" rows="8" cols="50">type here.</textarea>
+		<br><br><br>
+		<input type="submit" value = "Enter Blog">
+	</form>
+
+  <br><br>
+
+</body>
+</html>
